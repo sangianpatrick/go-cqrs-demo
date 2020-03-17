@@ -18,7 +18,7 @@ func TestClone(t *testing.T) {
 	db := client.Database("test")
 	collection := db.Collection("haha")
 
-	t.Run("should return new clone of collection", func(t *testing.T) {
+	t.Run("should return new clone collection and error", func(t *testing.T) {
 		ncol, err := collection.Clone()
 		assert.NotNil(t, ncol)
 		assert.NoError(t, err)

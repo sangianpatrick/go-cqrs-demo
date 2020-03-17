@@ -19,21 +19,14 @@ func NewClient(uri string) (mongodb.Client, error) {
 	opts := options.Client().ApplyURI(uri)
 	client, err := mongo.NewClient(opts)
 
-	if err != nil {
-		return nil, err
-	}
-
 	return &mongodbClient{
 		client: client,
-	}, nil
+	}, err
 }
 
 func (mc *mongodbClient) Connect(ctx context.Context) error {
 	err := mc.client.Connect(ctx)
-	if err != nil {
-		return err
-	}
-	return nil
+	return err
 }
 
 func (mc *mongodbClient) Database(dbName string) mongodb.Database {

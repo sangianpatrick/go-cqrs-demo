@@ -14,9 +14,6 @@ type mongodbCollection struct {
 
 func (mc *mongodbCollection) Clone() (mongodb.Collection, error) {
 	cloneCollection, err := mc.collection.Clone()
-	if err != nil {
-		return nil, err
-	}
 
 	newmc := &mongodbCollection{
 		collection: cloneCollection,
