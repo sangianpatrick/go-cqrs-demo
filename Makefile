@@ -5,5 +5,6 @@ coverprofile:
 	
 test:
 	mkdir -p ./coverage && \
-		go test -v -coverprofile=./coverage/profile.txt -covermode=atomic -race ./... && \
-	 		go tool cover -func=./coverage/profile.txt
+		go test -v -coverprofile=./coverage/profile.txt -covermode=atomic ./... && \
+	 		go tool cover -func=./coverage/profile.txt &&\
+			 	go tool cover -html=./coverage/profile.txt -o ./coverage/profile.html
