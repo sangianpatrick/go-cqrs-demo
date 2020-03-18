@@ -151,3 +151,51 @@ func TestUpdateMany(t *testing.T) {
 		assert.Nil(t, uResult)
 	})
 }
+
+func TestDeleteOne(t *testing.T) {
+	var uri string = "mongodb://localhost:27017/test"
+	client, _ := repository.NewClient(uri)
+	client.Connect(context.Background())
+	db := client.Database("test")
+	collection := db.Collection("haha")
+
+	t.Run("should return DeleteResult and error", func(t *testing.T) {
+		ctx, cancel := context.WithTimeout(context.Background(), time.Microsecond*1)
+		defer cancel()
+		dResult, err := collection.DeleteOne(ctx, bson.M{})
+		assert.Error(t, err)
+		assert.Nil(t, dResult)
+	})
+}
+
+func TestDeleteMany(t *testing.T) {
+	var uri string = "mongodb://localhost:27017/test"
+	client, _ := repository.NewClient(uri)
+	client.Connect(context.Background())
+	db := client.Database("test")
+	collection := db.Collection("haha")
+
+	t.Run("should return DeleteResult and error", func(t *testing.T) {
+		ctx, cancel := context.WithTimeout(context.Background(), time.Microsecond*1)
+		defer cancel()
+		dResult, err := collection.DeleteMany(ctx, bson.M{})
+		assert.Error(t, err)
+		assert.Nil(t, dResult)
+	})
+}
+
+func TestAggregate(t *testing.T) {
+	var uri string = "mongodb://localhost:27017/test"
+	client, _ := repository.NewClient(uri)
+	client.Connect(context.Background())
+	db := client.Database("test")
+	collection := db.Collection("haha")
+
+	t.Run("should return cursor", func(t *testing.T) {
+		ctx, cancel := context.WithTimeout(context.Background(), time.Microsecond*1)
+		defer cancel()
+		cur, err := collection.Aggregate(ctx, bson.M{})
+		assert.Error(t, err)
+		assert.Nil(t, cur)
+	})
+}

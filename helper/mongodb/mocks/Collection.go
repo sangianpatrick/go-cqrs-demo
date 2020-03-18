@@ -273,7 +273,7 @@ func (_m *Collection) InsertOne(ctx context.Context, document interface{}, opts 
 }
 
 // UpdateMany provides a mock function with given fields: ctx, filter, update, opts
-func (_m *Collection) UpdateMany(ctx context.Context, filter interface{}, update []interface{}, opts ...*options.UpdateOptions) (*mongo.UpdateResult, error) {
+func (_m *Collection) UpdateMany(ctx context.Context, filter interface{}, update interface{}, opts ...*options.UpdateOptions) (*mongo.UpdateResult, error) {
 	_va := make([]interface{}, len(opts))
 	for _i := range opts {
 		_va[_i] = opts[_i]
@@ -284,7 +284,7 @@ func (_m *Collection) UpdateMany(ctx context.Context, filter interface{}, update
 	ret := _m.Called(_ca...)
 
 	var r0 *mongo.UpdateResult
-	if rf, ok := ret.Get(0).(func(context.Context, interface{}, []interface{}, ...*options.UpdateOptions) *mongo.UpdateResult); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, interface{}, interface{}, ...*options.UpdateOptions) *mongo.UpdateResult); ok {
 		r0 = rf(ctx, filter, update, opts...)
 	} else {
 		if ret.Get(0) != nil {
@@ -293,7 +293,7 @@ func (_m *Collection) UpdateMany(ctx context.Context, filter interface{}, update
 	}
 
 	var r1 error
-	if rf, ok := ret.Get(1).(func(context.Context, interface{}, []interface{}, ...*options.UpdateOptions) error); ok {
+	if rf, ok := ret.Get(1).(func(context.Context, interface{}, interface{}, ...*options.UpdateOptions) error); ok {
 		r1 = rf(ctx, filter, update, opts...)
 	} else {
 		r1 = ret.Error(1)
@@ -303,7 +303,7 @@ func (_m *Collection) UpdateMany(ctx context.Context, filter interface{}, update
 }
 
 // UpdateOne provides a mock function with given fields: ctx, filter, update, opts
-func (_m *Collection) UpdateOne(ctx context.Context, filter interface{}, update []interface{}, opts ...*options.UpdateOptions) (*mongo.UpdateResult, error) {
+func (_m *Collection) UpdateOne(ctx context.Context, filter interface{}, update interface{}, opts ...*options.UpdateOptions) (*mongo.UpdateResult, error) {
 	_va := make([]interface{}, len(opts))
 	for _i := range opts {
 		_va[_i] = opts[_i]
@@ -314,7 +314,7 @@ func (_m *Collection) UpdateOne(ctx context.Context, filter interface{}, update 
 	ret := _m.Called(_ca...)
 
 	var r0 *mongo.UpdateResult
-	if rf, ok := ret.Get(0).(func(context.Context, interface{}, []interface{}, ...*options.UpdateOptions) *mongo.UpdateResult); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, interface{}, interface{}, ...*options.UpdateOptions) *mongo.UpdateResult); ok {
 		r0 = rf(ctx, filter, update, opts...)
 	} else {
 		if ret.Get(0) != nil {
@@ -323,7 +323,7 @@ func (_m *Collection) UpdateOne(ctx context.Context, filter interface{}, update 
 	}
 
 	var r1 error
-	if rf, ok := ret.Get(1).(func(context.Context, interface{}, []interface{}, ...*options.UpdateOptions) error); ok {
+	if rf, ok := ret.Get(1).(func(context.Context, interface{}, interface{}, ...*options.UpdateOptions) error); ok {
 		r1 = rf(ctx, filter, update, opts...)
 	} else {
 		r1 = ret.Error(1)
