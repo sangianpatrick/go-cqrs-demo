@@ -1,12 +1,4 @@
 mode: set
-github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/database.go:12.81,20.2 3 1
-github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/single_result.go:9.61,11.16 2 0
-github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/single_result.go:15.2,15.12 1 0
-github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/single_result.go:11.16,13.3 1 0
-github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/single_result.go:18.45,20.2 1 0
-github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/client.go:17.52,25.2 3 1
-github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/client.go:27.61,30.2 2 1
-github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/client.go:32.67,39.2 3 1
 github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/collection.go:15.66,23.2 3 1
 github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/collection.go:25.132,28.2 2 1
 github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/collection.go:30.133,38.2 3 1
@@ -15,3 +7,11 @@ github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/cursor.go:13.78
 github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/cursor.go:18.56,21.2 2 0
 github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/cursor.go:23.59,26.2 2 0
 github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/cursor.go:28.57,31.2 2 0
+github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/database.go:12.81,20.2 3 1
+github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/single_result.go:9.61,11.16 2 0
+github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/single_result.go:15.2,15.12 1 0
+github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/single_result.go:11.16,13.3 1 0
+github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/single_result.go:18.45,20.2 1 0
+github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/client.go:17.52,25.2 3 1
+github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/client.go:27.61,30.2 2 1
+github.com/sangianpatrick/go-cqrs-demo/helper/mongodb/repository/client.go:32.67,39.2 3 1
