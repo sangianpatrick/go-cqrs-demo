@@ -1,8 +1,9 @@
+.PHONY: coverprofile test
+
+coverprofile:
+	go tool cover -html=coverage.txt -o coverage.html
+	
 test:
-	go test -v ./... -coverprofile=coverage.out
-
-cover-html:
-	go test -v ./... -coverprofile=coverage.out && go tool cover -html=coverage.out
-
-cover-func:
-	go test -v ./... -coverprofile=coverage.out && go tool cover -func=coverage.out
+	mkdir -p ./coverage && \
+		go test -v -coverprofile=./coverage/profile.txt -covermode=atomic -race ./... && \
+	 		go tool cover -func=./coverage/profile.txt

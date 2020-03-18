@@ -3,6 +3,8 @@ package mongodb
 import (
 	"context"
 
+	"go.mongodb.org/mongo-driver/mongo"
+
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
@@ -21,20 +23,13 @@ type Database interface {
 type Collection interface {
 	Clone() (Collection, error)
 	CountDocuments(ctx context.Context, filter interface{}, opts ...*options.CountOptions) (int64, error)
-	FindOne(ctx context.Context, filter interface{}, opts ...*options.FindOneOptions) SingleResult
-	Find(ctx context.Context, filter interface{}, opts ...*options.FindOptions) (Cursor, error)
-}
-
-// SingleResult is mongodb's single result collection of function
-type SingleResult interface {
-	Decode(v interface{}) error
-	Err() error
-}
-
-// Cursor is mongodb's cursor collection of function
-type Cursor interface {
-	All(ctx context.Context, results interface{}) error
-	Decode(val interface{}) error
-	Close(ctx context.Context) error
-	Err(ctx context.Context) error
+	FindOne(ctx context.Context, filter interface{}, opts ...*options.FindOneOptions) *mongo.SingleResult
+	Find(ctx context.Context, filter interface{}, opts ...*options.FindOptions) (*mongo.Cursor, error)
+	InsertOne(ctx context.Context, document interface{}, opts ...*options.InsertOneOptions) (*mongo.InsertOneResult, error)
+	InsertMany(ctx context.Context, documents []interface{}, opts ...*options.InsertManyOptions) (*mongo.InsertManyResult, error)
+	UpdateOne(ctx context.Context, filter interface{}, update interface{}, opts ...*options.UpdateOptions) (*mongo.UpdateResult, error)
+	UpdateMany(ctx context.Context, filter interface{}, update interface{}, opts ...*options.UpdateOptions) (*mongo.UpdateResult, error)
+	DeleteOne(ctx context.Context, filter interface{}, opts ...*options.DeleteOptions) (*mongo.DeleteResult, error)
+	DeleteMany(ctx context.Context, filter interface{}, opts ...*options.DeleteOptions) (*mongo.DeleteResult, error)
+	Aggregate(ctx context.Context, pipeline interface{}, opts ...*options.AggregateOptions) (*mongo.Cursor, error)
 }
